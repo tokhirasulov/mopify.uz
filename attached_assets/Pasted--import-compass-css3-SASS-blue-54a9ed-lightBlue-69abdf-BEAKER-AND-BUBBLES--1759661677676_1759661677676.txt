@@ -1,0 +1,334 @@
+@import "compass/css3";
+
+/* SASS */
+
+$blue: #54a9ed;
+$lightBlue: #69abdf;
+
+
+/* BEAKER AND BUBBLES */
+@-webkit-keyframes bluePulse {
+        from { -webkit-box-shadow: 0 0 30px $blue;}
+        50% {  -webkit-box-shadow: 0 0 80px $lightBlue;}
+        to { -webkit-box-shadow: 0 0 30px $blue;}
+}
+
+/* Bubble */
+@mixin beakerBubble( $width, $height, $border-radius, $left, $bottom, $nr, $duration  ) {
+    display: block;
+    background:#FFF;
+        
+    background: -moz-radial-gradient(center, ellipse cover,  rgba($lightBlue,0.2) 0%, rgba($blue,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba($lightBlue,0.2)), color-stop(100%,rgba($blue,1))); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba($lightBlue,0.2) 0%,rgba($blue,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba($lightBlue,0.2) 0%, rgba($blue,1) 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba($lightBlue,0.2) 0%, rgba($blue,1) 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center, rgba($lightBlue,0.2) 0%, rgba($blue,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3369abdf', endColorstr='#54a9ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+    width: $width;
+    height: $height;
+    border-radius:$border-radius;
+    
+    position: absolute;
+    left: $left;
+    bottom: $bottom;
+    
+    animation-name: bubbleFloat#{$nr};
+    -webkit-animation-name: bubbleFloat#{$nr};
+    -moz-animation-name:  bubbleFloat#{$nr};
+    -o-animation-name:  bubbleFloat#{$nr};
+    
+    animation-duration: #{$duration};
+    -webkit-animation-duration: #{$duration};
+    -moz-animation-duration: #{$duration};
+    -o-animation-duration: #{$duration};
+    
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+}
+
+/* Bubble - Glow */
+@mixin beakerBubbleGlow ($duration){
+    width: 100%; height: 100%; position: relative; display: block; border-radius: 200px; 
+    
+    animation-name: bluePulse;
+    -webkit-animation-name: bluePulse;
+    -moz-animation-name: bluePulse;
+    -o-animation-name: bluePulse;
+    
+    animation-duration: #{$duration};
+    -webkit-animation-duration: #{$duration};
+     -moz-animation-duration: #{$duration};
+    -o-animation-duration: #{$duration};
+    
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    -o-animation-iteration-count: infinite;
+    
+}
+
+
+/* Mixing Animation Float Bubbles */
+
+@mixin floatBubbleValue ($vert:110px, $scale: .9 , $opacity:0) {
+    
+        bottom: $vert; transform: scale($scale); opacity:$opacity; animation-timing-function: ease-in-out;  
+
+}
+
+@mixin Webkit-floatBubbleValue ($vert:110px, $scale: .9 , $opacity:0) {
+    
+        bottom: $vert; -webkit-transform: scale($scale); opacity:$opacity; -webkit-animation-timing-function: ease-in-out;  
+
+}
+
+@mixin Moz-floatBubbleValue ($vert:110px, $scale: .9 , $opacity:0) {
+    
+        bottom: $vert; -moz-transform: scale($scale); opacity:$opacity; -moz-animation-timing-function: ease-in-out;  
+
+}
+
+
+@mixin o-floatBubbleValue ($vert:110px, $scale: .9 , $opacity:0) {
+    
+        bottom: $vert; -o-transform: scale($scale); opacity:$opacity; -o-animation-timing-function: ease-in-out;  
+
+}
+
+/* 
+ * Bubble 1
+ * $nr: 1;
+ *
+ */
+
+$nr: 1;
+
+@keyframes bubbleFloat#{$nr} {
+        from { @include floatBubbleValue( 110px, .9, 0 )  }
+        1% { @include floatBubbleValue( 110px, .3, 0 ) }
+        30% { @include floatBubbleValue( 110px, .8, 1 ) }
+        95% { @include floatBubbleValue( 545px, .3, 1 ) }
+        99% { @include floatBubbleValue( 550px, 3, 0 ) }
+        to { @include floatBubbleValue( 110px, .9, 0 ) }
+}
+
+
+@-webkit-keyframes bubbleFloat#{$nr} {
+        from { @include Webkit-floatBubbleValue ( 110px, .9, 0 ) }
+        1% { @include Webkit-floatBubbleValue( 110px, .3, 0 ) }
+        30% { @include Webkit-floatBubbleValue( 110px, .8, 1 ) }
+        95% { @include Webkit-floatBubbleValue( 545px, .3, 1 ) }
+        99% { @include Webkit-floatBubbleValue( 550px, 3, 0 ) }
+        to { @include Webkit-floatBubbleValue( 110px, .9, 0 ) }
+}
+
+@-moz-keyframes bubbleFloat#{$nr} {
+        from { @include Moz-floatBubbleValue( 110px, .9, 0 )  }
+        1% { @include Moz-floatBubbleValue( 110px, .3, 0 ) }
+        30% { @include Moz-floatBubbleValue( 110px, .8, 1 ) }
+        95% { @include Moz-floatBubbleValue( 545px, .3, 1 ) }
+        99% { @include Moz-floatBubbleValue( 550px, 3, 0 ) }
+        to { @include Moz-floatBubbleValue( 110px, .9, 0 ) }
+}
+
+@-o-keyframes bubbleFloat#{$nr} {
+        from { @include o-floatBubbleValue( 110px, .9, 0 )  }
+        1% { @include o-floatBubbleValue( 110px, .3, 0 ) }
+        30% { @include o-floatBubbleValue( 110px, .8, 1 ) }
+        95% { @include o-floatBubbleValue( 545px, .3, 1 ) }
+        99% { @include o-floatBubbleValue( 550px, 3, 0 ) }
+        to { @include o-floatBubbleValue( 110px, .9, 0 ) }
+}
+
+
+/* 
+ * Bubble 2
+ * 
+ *
+ */
+
+/* Werte */
+
+$nr: 2;
+
+@keyframes bubbleFloat#{$nr} {
+        from { @include floatBubbleValue( 110px, 1, 0 )  }
+        1% { @include floatBubbleValue( 110px, .3, 0 ) }
+        30% { @include floatBubbleValue( 110px, .9, 1 ) }
+        95% { @include floatBubbleValue( 650px, .3, 1 ) }
+        99% { @include floatBubbleValue( 655px, 3, 0 ) }
+        to { @include floatBubbleValue( 110px, 1, 0 ) }
+}
+
+
+@-webkit-keyframes bubbleFloat#{$nr} {
+        from { @include Webkit-floatBubbleValue( 110px, .9, 0 )  }
+        1% { @include Webkit-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include Webkit-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include Webkit-floatBubbleValue( 650px, .9, 1 ) }
+        99% { @include Webkit-floatBubbleValue( 655px, 3, 0 ) }
+        to { @include Webkit-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+@-moz-keyframes bubbleFloat#{$nr} {
+        from { @include Moz-floatBubbleValue( 110px, .9, 0 )  }
+        1% { @include Moz-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include Moz-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include Moz-floatBubbleValue( 650px, .9, 1 ) }
+        99% { @include Moz-floatBubbleValue( 655px, 3, 0 ) }
+        to { @include Moz-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+@-o-keyframes bubbleFloat#{$nr} {
+        from { @include o-floatBubbleValue( 110px, .9, 0 )  }
+        1% { @include o-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include o-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include o-floatBubbleValue( 545px, .9, 1 ) }
+        99% { @include o-floatBubbleValue( 550px, 3, 0 ) }
+        to { @include o-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+
+/* 
+ * Bubble 3
+ * 
+ *
+ */
+
+/* Werte */
+
+$nr: 3;
+
+@keyframes bubbleFloat#{$nr} {
+        from { @include floatBubbleValue( 110px, 1, 0 )  }
+        1% { @include floatBubbleValue( 110px, .3, 0 ) }
+        30% { @include floatBubbleValue( 110px, .9, 1 ) }
+        95% { @include floatBubbleValue( 490px, .3, 1 ) }
+        99% { @include floatBubbleValue( 510px, 3, 0 ) }
+        to { @include floatBubbleValue( 110px, 1, 0 ) }
+}
+
+
+@-webkit-keyframes bubbleFloat#{$nr} {
+        from { @include Webkit-floatBubbleValue  }
+        1% { @include Webkit-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include Webkit-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include Webkit-floatBubbleValue( 490px, .9, 1 ) }
+        99% { @include Webkit-floatBubbleValue( 510px, 3, 0 ) }
+        to { @include Webkit-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+@-moz-keyframes bubbleFloat#{$nr} {
+        from { @include Moz-floatBubbleValue  }
+        1% { @include Moz-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include Moz-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include Moz-floatBubbleValue( 490px, .9, 1 ) }
+        99% { @include Moz-floatBubbleValue( 510px, 3, 0 ) }
+        to { @include Moz-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+@-o-keyframes bubbleFloat#{$nr} {
+        from { @include o-floatBubbleValue  }
+        1% { @include o-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include o-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include o-floatBubbleValue( 490px, .9, 1 ) }
+        99% { @include o-floatBubbleValue( 510px, 3, 0 ) }
+        to { @include o-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+
+/* 
+ * Bubble 3
+ * 
+ *
+ */
+
+/* Werte */
+
+$nr: 4;
+
+@keyframes bubbleFloat#{$nr} {
+        from { @include floatBubbleValue( 110px, 1, 0 )  }
+        1% { @include floatBubbleValue( 110px, .3, 0 ) }
+        30% { @include floatBubbleValue( 110px, .9, 1 ) }
+        95% { @include floatBubbleValue( 595px, .3, 1 ) }
+        99% { @include floatBubbleValue( 620px, 3, 0 ) }
+        to { @include floatBubbleValue( 110px, 1, 0 ) }
+}
+
+
+@-webkit-keyframes bubbleFloat#{$nr} {
+        from { @include Webkit-floatBubbleValue  }
+        1% { @include Webkit-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include Webkit-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include Webkit-floatBubbleValue( 595px, .9, 1 ) }
+        99% { @include Webkit-floatBubbleValue( 620px, 3, 0 ) }
+        to { @include Webkit-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+@-moz-keyframes bubbleFloat#{$nr} {
+        from { @include Moz-floatBubbleValue  }
+        1% { @include Moz-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include Moz-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include Moz-floatBubbleValue( 595px, .9, 1 ) }
+        99% { @include Moz-floatBubbleValue( 620px, 3, 0 ) }
+        to { @include Moz-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+@-o-keyframes bubbleFloat#{$nr} {
+        from { @include o-floatBubbleValue  }
+        1% { @include o-floatBubbleValue( 110px, 1, 0 ) }
+        30% { @include o-floatBubbleValue( 110px, .3, 1 ) }
+        95% { @include o-floatBubbleValue( 595px, .9, 1 ) }
+        99% { @include o-floatBubbleValue( 620px, 3, 0 ) }
+        to { @include o-floatBubbleValue( 110px, 1, 0 ) }
+}
+
+
+
+/**********************************************************/
+
+html {
+background-color: rgb(30,87,153); // Old browsers
+@include filter-gradient(#1e5799, #7db9e8, vertical); // IE6-9
+    @include background-image(linear-gradient(top, rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(125,185,232,1) 100%));}
+
+div#science { background: url(/playground/playground/shadows/table-bg.png) bottom center no-repeat; padding-bottom: 20px; }
+
+div#bubbleArea { width: 300px; height: 700px; margin: 0 auto; position: relative; }
+
+div#bubbleArea span.glow { @include beakerBubbleGlow ($duration: 2s) }
+
+
+
+
+div#bubbleArea span.bubble { @include beakerBubble ($width:100px, $height:100px, $left: 100px, $bottom: 110px, $border-radius: 200px, $nr:1, $duration:5s );}
+
+div#bubbleArea span.bubble2{ @include beakerBubble ($width:30px, $height:30px, $left: 125px, $bottom: 110px, $border-radius: 60px, $nr:2, $duration:5s );}
+
+div#bubbleArea span.bubble3{ @include beakerBubble ($width:50px, $height:50px, $left: 129px, $bottom: 110px, $border-radius: 100px,$nr:3, $duration:7s );}
+
+div#bubbleArea span.bubble4{ @include beakerBubble ($width:80px, $height:80px, $left: 97px, $bottom: 110px, $border-radius: 160px, $nr:4, $duration:10s );}
+
+
+.font {
+bottom: 105px;
+position: absolute;
+left: 40%;
+color: white;
+font-size: 5em;
+}
+
+.font span {
+position: relative;
+font-size: 30px;
+top: 9px;
+}
+    
+    
+    

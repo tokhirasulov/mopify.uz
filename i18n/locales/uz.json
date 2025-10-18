@@ -1,0 +1,143 @@
+{
+  "nav": {
+    "services": "Xizmatlar",
+    "whyUs": "Nega biz",
+    "testimonials": "Fikrlar",
+    "getQuote": "Narx olish"
+  },
+  "hero": {
+    "title": "Sizning uyingiz uchun professional tozalash",
+    "smallTitle": "Sizning uyingiz uchun tozalash",
+    "titleHighlight": "Mukammal uy",
+    "description": "Bizning yuqori darajadagi tozalash xizmatlarimiz bilan makoningizni o'zgartiring. Ishonchli, samarali va har doim benuqson.",
+    "getStarted": "Boshlash",
+    "learnMore": "Batafsil",
+    "benefit1": "Ekologik toza mahsulotlar",
+    "benefit2": "Tajribali mutaxassislar",
+    "benefit3": "100% qoniqish kafolati",
+    "stat1Title": "Mavjudlik",
+    "stat1Value": "24/7",
+    "stat2Title": "Mamnun mijozlar",
+    "stat2Value": "98%",
+    "stat3Title": "Tozalangan uylar",
+    "stat3Value": "5000+",
+    "stat4Title": "Javob berish vaqti",
+    "stat4Value": "< 2 soat"
+  },
+  "services": {
+    "title": "Bizning xizmatlarimiz",
+    "subtitle": "Har qanday ehtiyoj uchun keng qamrovli tozalash yechimlari",
+    "residential": {
+      "title": "Uy tozalash",
+      "description": "Oshxonadan yotoqxonagacha uyingizni chuqur tozalash"
+    },
+    "commercial": {
+      "title": "Tijorat tozalash",
+      "description": "Ofislar va tijorat binolari uchun professional tozalash"
+    },
+    "deepCleaning": {
+      "title": "Chuqur tozalash",
+      "description": "Makoningizning har bir burchagini puxta tozalash"
+    },
+    "moveCleaning": {
+      "title": "Ko'chishda tozalash",
+      "description": "Yangi yoki eski joyingizni ko'chishga tayyorlang"
+    },
+    "carpet": {
+      "title": "Gilam tozalash",
+      "description": "Professional gilam tozalash va qayta tiklash"
+    },
+    "window": {
+      "title": "Oyna yuvish",
+      "description": "Ichki va tashqi tomondan kristal toza oynalar"
+    }
+  },
+  "whyUs": {
+    "title": "Nega Biz?",
+    "subtitle": "Biz minglab mijozlar ishongan ajoyib xizmat ko'rsatamiz",
+    "certified": {
+      "title": "Sertifikatlangan mutaxassislar",
+      "description": "Jamoamiz to'liq o'qitilgan va sertifikatlangan"
+    },
+    "eco": {
+      "title": "Ekologik toza mahsulotlar",
+      "description": "Biz faqat xavfsiz va ekologik toza vositalardan foydalanamiz"
+    },
+    "satisfaction": {
+      "title": "Qoniqish kafolati",
+      "description": "Sizning baxtingiz bizning birinchi ustuvorligimiz"
+    },
+    "pricing": {
+      "title": "Moslashuvchan narxlar",
+      "description": "Yashirin to'lovsiz hamyonbop narxlar"
+    }
+  },
+  "testimonials": {
+    "title": "Mijozlarimiz nima deyishadi",
+    "subtitle": "Nima uchun yuzlab mijozlar bizga tozalashni ishonishini bilib oling",
+    "client1": {
+      "name": "Sara Jonson",
+      "role": "Uy egasi",
+      "content": "Ajoyib xizmat! Mening kvartiram hech qachon bunday toza bo'lmagan. Jamoa professional va tafsilotlarga e'tibor beradi."
+    },
+    "client2": {
+      "name": "Maykl Chen",
+      "role": "Ofis menejeri",
+      "content": "Biz ularning tijorat xizmatlaridan bir yildan ortiq foydalanmoqdamiz. Har doim o'z vaqtida, har doim puxta. Qat'iy tavsiya qilaman!"
+    },
+    "client3": {
+      "name": "Emili Rodrigez",
+      "role": "Band ona",
+      "content": "Qutqaruvchilar! Ekologik mahsulotlar uyda bolalar bilan katta afzallik. Ishonchli va ishonchli."
+    }
+  },
+  "cta": {
+    "title": "Tayyor",
+    "titleHighlight": "Benuqson makon?",
+    "description": "Bugun bepul, majburiyatsiz maslahat oling va nima uchun minglab odamlar barcha tozalash ehtiyojlari uchun Mopify'ga ishonishini bilib oling.",
+    "getFreeQuote": "Bepul maslahat olish",
+    "callNow": "Hozir qo'ng'iroq qiling",
+    "availability": "24/7 mavjud • O'sha kunda xizmat • Yashirin to'lovsiz"
+  },
+  "bookingForm": {
+    "title": "Tozalashni bron qilish",
+    "nameLabel": "Ismingiz",
+    "namePlaceholder": "Ismingizni kiriting",
+    "phoneLabel": "Telefon raqami",
+    "phonePlaceholder": "+998 XX XXX XX XX",
+    "roomsLabel": "Nechta xona tozalash kerak?",
+    "roomsPlaceholder": "Xonalar sonini kiriting",
+    "suppliesLabel": "Tozalash vositalari",
+    "suppliesCheckbox": "Menda o'zim tozalash vositalari bor",
+    "suppliesOwn": "Siz o'z tozalash vositalaringizdan foydalanasiz",
+    "additionalInfoPlaceholder": "Masalan, uy yoki ofis, maxsus ko'rsatmalar va h.k.",
+    "additionalInfoLabel": "Qo'shimcha ma'lumot",
+    "suppliesOurs": "Biz tozalash vositalarini taqdim etamiz",
+    "peopleLabel": "Nechta odam buyurtma qilmoqchisiz?",
+    "peoplePlaceholder": "Odamlar sonini kiriting",
+    "back": "Orqaga",
+    "next": "Keyingi",
+    "submit": "Yuborish",
+    "sending": "Yuborilmoqda...",
+    "successMessage": "Arizangiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog'lanamiz.",
+    "errorMessage": "Xatolik yuz berdi. Iltimos, qayta urinib ko'ring."
+  },
+  "footer": {
+    "description": "Ishonch bilan professional tozalash xizmatlari. 2020 yildan beri makoningizni benuqson qilamiz.",
+    "services": "Xizmatlar",
+    "residential": "Uy tozalash",
+    "commercial": "Tijorat tozalash",
+    "deepCleaning": "Chuqur tozalash",
+    "specialized": "Maxsus tozalash",
+    "company": "Kompaniya",
+    "about": "Biz haqimizda",
+    "careers": "Karyera",
+    "blog": "Blog",
+    "contact": "Aloqa",
+    "phone": "Telefon",
+    "email": "Email",
+    "address": "Manzil",
+    "location": "123 Clean Street, Sparkle City, SC 12345",
+    "copyright": "© {year} Mopify. Barcha huquqlar himoyalangan."
+  }
+}

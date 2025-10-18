@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* Mopify Cleaning - Tiffany Minimal Design System */
+    --background: 195 100% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 195 80% 12%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 195 80% 12%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Tiffany - water & cleanliness */
+    --primary: 189 100% 50%;
+    --primary-foreground: 195 100% 8%;
+
+    /* Soft tiffany variant */
+    --secondary: 189 80% 60%;
+    --secondary-foreground: 195 100% 8%;
+
+    --muted: 195 50% 20%;
+    --muted-foreground: 189 30% 70%;
+
+    /* Light tiffany accent */
+    --accent: 189 90% 55%;
+    --accent-foreground: 195 100% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 195 50% 20%;
+    --input: 195 50% 20%;
+    --ring: 189 100% 50%;
+
+    --radius: 1rem;
+
+    /* Glass-morphic effect */
+    --glass-bg: 195 50% 15%;
+    --glass-border: 189 50% 30%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(195, 100%, 8%), hsl(195, 80%, 15%));
+    --gradient-accent: linear-gradient(135deg, hsl(189, 100%, 50%), hsl(189, 80%, 60%));
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(189, 100%, 50%), hsl(104, 100%, 54%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+.mopify-icon > path {
+  stroke-width: 2px;
+}
