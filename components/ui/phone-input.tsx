@@ -12,7 +12,7 @@ type PhoneInputProps = Omit<
   "type" | "onChange"
 > & {
   onChange?: (formattedPhone: string) => void;
-  defaultCountry?: string;
+  defaultCountry?: any;
   value?: string;
 };
 
