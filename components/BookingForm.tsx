@@ -47,15 +47,22 @@ const BookingForm = () => {
     if (step > 1) setStep(step - 1);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/send-booking", {
+      e.preventDefault();
+
+      const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: formData.name,
+          phoneNumber: formData.phone,
+          hasOwnStuff: formData.ownSupplies,
+          peopleNumber: formData.numberOfPeople,
+          rooms: formData.rooms,
+          message: formData.additionalInfo,
+        }),
       });
 
       if (response.ok) {
