@@ -13,15 +13,13 @@ export async function POST(request) {
     const data = await resend.emails.send({
       from: "Contact Form <noreply@mopify.uz>",
       to: "mopifyuz@gmail.com", // Your email
-      subject: `New Contact Form Submission from ${fullName}`,
+      subject: `Новая заявка от сайта`,
       html: `
-        <h2>New Contact Form Submission</h2>
+        <h2>Новая заявка с контактной формы</h2>
         <p><strong>Имя Фамилия:</strong> ${fullName}</p>
         <p><strong>Номер телефона:</strong> ${phoneNumber}</p>
         <p><strong>Количество комнат:</strong> ${rooms}</p>
-        <p><strong>Чистящие средства:</strong> ${
-          hasOwnStuff ? "<p>Да</p>" : "<p>Нет</p>"
-        }</p>
+        <p><strong>Чистящие средства:</strong> ${hasOwnStuff ? "<p>От клиента</p>" : "<p>От нас</p>"}</p>
          <p><strong>Человек:</strong> ${peopleNumber}</p>
          <p><strong>Дополнительная информация:</strong> ${message}</p>
       `,
